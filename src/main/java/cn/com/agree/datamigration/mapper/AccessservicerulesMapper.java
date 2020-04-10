@@ -12,4 +12,7 @@ import java.util.List;
 public interface AccessservicerulesMapper {
     @Select("select * from aecip_ipc_accessservicerules ")
     public List<Accessservicerules> getTest();
+
+    @Select("select * from aecip_ipc_accessservicerules where merchandisecode=2019120399900001622 ")
+    public Accessservicerules getByCode();
 }
