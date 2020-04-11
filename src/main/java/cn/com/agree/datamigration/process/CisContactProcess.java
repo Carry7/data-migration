@@ -2,6 +2,7 @@ package cn.com.agree.datamigration.process;
 
 import cn.com.agree.datamigration.entity.Ciscusttelwayinterim;
 import cn.com.agree.datamigration.mapper.CiscusttelwayinterimMapper;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 
@@ -13,6 +14,7 @@ import java.util.List;
  * 个人客户联系临时信息处理
  */
 public class CisContactProcess implements Runnable{
+    private static Logger logger = Logger.getLogger(CisContactProcess.class);
 
     // 当前线程编号
     private String threadNum;
@@ -32,7 +34,7 @@ public class CisContactProcess implements Runnable{
     public void run() {
         System.out.println("当前线程编号："+threadNum);
         System.out.println("线程个数："+threadTotal);
-        List<Ciscusttelwayinterim>  cis = CiscusttelwayinterimMapper.getCustno(threadTotal,threadNum);
-        System.out.println(cis);
+        List<String>  cis = CiscusttelwayinterimMapper.getCustno(threadTotal,threadNum);
+        logger.info(cis.toString());
     }
 }
