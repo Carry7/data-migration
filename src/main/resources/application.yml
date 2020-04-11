@@ -1,12 +1,7 @@
 
-
 spring:
   datasource:
     #   数据源基本配置
-#    username: root
-#    password: root
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#    url: jdbc:mysql://192.168.10.107:3306/test
     url: jdbc:oracle:thin:@192.9.200.195:1521:fbs
     username: aecip_ipc
     password: aecip_ipc
@@ -29,15 +24,13 @@ spring:
     maxPoolPreparedStatementPerConnectionSize: 20
     useGlobalDataSourceStat: true
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+  #   redis 配置信息
+  redis:
+    host: 127.0.0.1
+
+#  mybatis 配置信息
 mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath:mybatis/mapper/*.xml
 
-#    schema:
-#      - classpath:sql/department.sql
-#      - classpath:sql/employee.sql
-
-server:
-  port: 8081
-
-# test112312313
