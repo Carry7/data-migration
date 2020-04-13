@@ -18,5 +18,8 @@ import java.util.List;
 public interface CiscusttelwayinterimMapper {
 
     @Select("select custno from (select distinct custno from aecip_cif_cispersoninterim) where mod(custno,#{threadTotal}) = #{threadNum}")
-    public List<String > getCustno(@Param("threadTotal") String threadTotal, @Param("threadNum") String threadNum);
+    public List<String > getCustno(@Param("threadTotal") int threadTotal, @Param("threadNum") int threadNum);
+
+    @Select("select * from aecip_cif_cispersoninterim where custno=#{custno}")
+    public List<Ciscusttelwayinterim> getCiscusttelwayinterimByCustno(@Param("custno") String custno);
 }

@@ -32,9 +32,8 @@ public class CisContactProcess implements Runnable{
 
     @Override
     public void run() {
-        System.out.println("当前线程编号："+threadNum);
-        System.out.println("线程个数："+threadTotal);
-        List<String>  cis = CiscusttelwayinterimMapper.getCustno(threadTotal,threadNum);
-        logger.info(cis.toString());
+        logger.info("当前线程编号："+threadNum);
+        //List<String>  cis = CiscusttelwayinterimMapper.getCustno(threadTotal,threadNum);
+       // logger.info(cis.toString());
     }
 }

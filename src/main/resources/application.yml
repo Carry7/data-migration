@@ -8,8 +8,8 @@ spring:
     driver-class-name: oracle.jdbc.OracleDriver
     type: com.alibaba.druid.pool.DruidDataSource
     #   数据源其他配置
-    initialSize: 5
-    minIdle: 5
+    initialSize: 20
+    minIdle: 20
     maxActive: 20
     maxWait: 60000
     timeBetweenEvictionRunsMillis: 60000
@@ -19,6 +19,7 @@ spring:
     testOnBorrow: false
     testOnReturn: false
     poolPreparedStatements: true
+    defaultAutoCommit: false   #关闭自动提交
     #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
     filters: stat,wall,log4j
     maxPoolPreparedStatementPerConnectionSize: 20
